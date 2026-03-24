@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Destinations</title>
+
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY */
+body {
+  background: linear-gradient(135deg, #0f2027, #4f899d, #74b7d4);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+header p {
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* GRID */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+/* CARD */
+.card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* OVERLAY */
+.card .overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+.card h3 {
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* HOVER EFFECT */
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* ANIMATION ACTIVE */
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.7;
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Explore Destinations</h1>
+  <p>Curated destinations for unforgettable experiences</p>
+ 
+</header>
+
+<section class="container">
+
+  <div class="card">
+    <img src="images/maldives.jpeg" alt="">
+    <div class="overlay">
+      <h3>MALDIVES</h3>
+      <p><b>Living the island dream in the Maldives is to Escape to turquoise waters and white sands.</b></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/DUBAI IMAGE 2.jpeg" alt="">
+    <div class="overlay">
+      <h3>DUBAI</h3>
+      <p><b>Living the luxury life in Dubai,Where dreams touch the sky</b></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/eiffel-tower-night-illumination-paris-france-198412142.webp" alt="">
+    <div class="overlay">
+      <h3>PARIS</h3>
+      <p><b>Lost in the magic of Paris,City of love, lights, and dreams</b></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/greece.jpeg" alt="">
+    <div class="overlay">
+      <h3>GREECE</h3>
+      <p><b>Salt in the air, Greece in my heart, blue domes and stunning coastlines</b></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/bali.jpeg" alt="">
+    <div class="overlay">
+      <h3>BALI</h3>
+      <p><b>Lost in the beauty of Bali wheareas Relax, refresh, repeat</b></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="norway.jpeg" alt="">
+    <div class="overlay">
+      <h3>NORWAY</h3>
+      <p><b>Dancing lights in the Norwegian, sky and Chasing the Northern Lights</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="images/thailand.jpeg" alt="">
+    <div class="overlay">
+      <h3>THAILAND</h3>
+      <p><b>Thailand — where every moment feels like paradise,Golden beaches and turquoise dreams</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="images/malaysia .jpeg" alt="">
+    <div class="overlay">
+      <h3>MALAYSIA</h3>
+      <p><b>A blend of cultures, colors, and beauty-Exploring the heart of Malaysia</b></p>
+    </div>
+  </div>
+   
+
+</section>
+
+<footer>
+  <p>© 2026Travel Explorer</p>
+</footer>
+
+<script>
+/* SCROLL ANIMATION */
+const cards = document.querySelectorAll('.card');
+
+function revealCards() {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+
+    if (cardTop < triggerBottom) {
+      card.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealCards);
+window.addEventListener('load', revealCards);
+</script>
+
+</body>
+</html>

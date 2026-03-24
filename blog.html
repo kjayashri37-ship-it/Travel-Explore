@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Blog</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY */
+body {
+  background: linear-gradient(135deg, #0f2027, #58a5bf, #2c5364);
+  color: white;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+header p {
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* BLOG GRID */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+/* CARD */
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: all 0.4s ease;
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* CONTENT */
+.card-content {
+  padding: 20px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #00c6ff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0072ff;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.7;
+}
+
+/* RESPONSIVE */
+@media(max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Travel Blog</h1>
+  <p>Explore stories, tips, and guides from around the world</p>
+</header>
+
+<section class="container">
+
+  <div class="card">
+    <img src="images/maldives.jpeg" alt="">
+    <div class="card-content">
+      <h3>Maldives Escape</h3>
+      <p>Experience crystal-clear waters, luxury resorts, and peaceful island vibes.</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/eiffel-tower-night-illumination-paris-france-198412142.webp" alt="">
+    <div class="card-content">
+      <h3>Paris Journey</h3>
+      <p>Discover romance, culture, and iconic landmarks in the city of love.</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/bali.jpeg" alt="">
+    <div class="card-content">
+      <h3>Bali Adventure</h3>
+      <p>Explore waterfalls, temples, and tropical beauty in Bali.</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/DUBAI IMAGE 2.jpeg" alt="">
+    <div class="card-content">
+      <h3>Dubai Luxury</h3>
+      <p>Experience modern luxury, desert safaris, and stunning skyscrapers.</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/greece.jpeg" alt="">
+    <div class="card-content">
+      <h3>Greek Islands</h3>
+      <p>White houses, blue seas, and unforgettable sunsets in Greece.</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="norway.jpeg" alt="">
+    <div class="card-content">
+      <h3>Norway Fjords</h3>
+      <p>Witness breathtaking fjords and northern lights in Norway.</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Travel Blog | Explore the World</p>
+</footer>
+
+</body>
+</html>
